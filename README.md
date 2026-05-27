@@ -55,38 +55,48 @@ La aplicación implementa:
 # Estructura del proyecto
 
 ```txt
-spa-rick-morty/
+RickAndMorty_SPAChallenge-main/
 │
 ├── index.html
-├── assets/
-│   ├── css/
-│   │   └── styles.css
-│   │
-│   └── js/
-│       ├── app.js
-│       ├── router.js
-│       │
-│       ├── services/
-│       │   └── api.js
-│       │
-│       ├── utils/
-│       │   └── helpers.js
-│       │
-│       ├── components/
-│       │   ├── navbar.js
-│       │   └── characterCard.js
-│       │
-│       ├── pages/
-│       │   ├── home.js
-│       │   ├── contacts.js
-│       │   └── about.js
-│       │
-│       └── views/
-│           ├── home.html
-│           ├── contacts.html
-│           └── about.html
+├── package.json
+├── package-lock.json
+├── .gitignore
+├── README.md
 │
-└── README.md
+└── assets/
+    ├── css/
+    │   └── styles.css
+    │
+    └── js/
+        ├── app.js
+        ├── router.js
+        │
+        ├── components/
+        │   ├── characterCard.js
+        │   ├── episodeCard.js
+        │   ├── locationCard.js      ← nuevo vs versión anterior
+        │   └── navbar.js
+        │
+        ├── pages/
+        │   ├── home.js
+        │   ├── episode.js
+        │   ├── location.js          ← nuevo vs versión anterior
+        │   ├── contacts.js
+        │   └── about.js
+        │
+        ├── services/
+        │   ├── api.js
+        │   └── httpClient.js
+        │
+        ├── utils/
+        │   └── helpers.js
+        │
+        └── views/
+            ├── home.html
+            ├── episode.html
+            ├── location.html        ← nuevo vs versión anterior
+            ├── contacts.html
+            └── about.html
 ```
 
 # Ejecución del proyecto
