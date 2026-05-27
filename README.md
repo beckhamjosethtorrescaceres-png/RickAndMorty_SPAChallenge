@@ -155,10 +155,10 @@ Todos los datos provienen de la [Rick and Morty API](https://rickandmortyapi.com
 
 ## Autores
 
-**Beckham Torres**
-**Cristian Morales**
-**Isai Cataño**
-**Andres Cassiani**
+**Beckham Torres** ,
+**Cristian Morales**,
+**Isai Cataño**,
+**Andres Cassiani**,
 **Luis Devia**
 
 ---
