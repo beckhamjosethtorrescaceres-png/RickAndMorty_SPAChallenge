@@ -74,13 +74,13 @@ RickAndMorty_SPAChallenge-main/
         ├── components/
         │   ├── characterCard.js
         │   ├── episodeCard.js
-        │   ├── locationCard.js      ← nuevo vs versión anterior
+        │   ├── locationCard.js      
         │   └── navbar.js
         │
         ├── pages/
         │   ├── home.js
         │   ├── episode.js
-        │   ├── location.js          ← nuevo vs versión anterior
+        │   ├── location.js          
         │   ├── contacts.js
         │   └── about.js
         │
