@@ -1,6 +1,7 @@
 import { loadHTML } from '../utils/helpers.js';
 import { getCharacters } from '../services/api.js';
 import { characterCard } from '../components/characterCard.js';
+import { add_characters } from '../components/add.js';
 
 /**
  * Renderiza Home
@@ -17,4 +18,5 @@ export async function renderHome() {
     container.innerHTML = characters
         .map(character => characterCard(character))
         .join('');
+    add_characters()
 }
