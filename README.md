@@ -153,12 +153,16 @@ Todos los datos provienen de la [Rick and Morty API](https://rickandmortyapi.com
 
 ---
 
-## Autor
+## Autores
 
-**Devis M**
+**Beckham Torres**
+**Cristian Morales**
+**Isai Cataño**
+**Andres Cassiani**
+**Luis Devia**
 
 ---
 
 ## Licencia
 
-Este proyecto es de uso privado.
+Este proyecto es de uso publico.
