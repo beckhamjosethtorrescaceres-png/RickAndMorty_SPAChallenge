@@ -1,118 +1,164 @@
-# SPA Vanilla JavaScript - Rick and Morty
+# Rick and Morty SPA
 
-## Descripción
-
-Este proyecto es un ejemplo de cómo construir una SPA (Single Page Application) utilizando únicamente JavaScript Vanilla, sin frameworks ni librerías externas.
-
-La aplicación implementa:
-
-- Routing básico SPA
-- Renderizado dinámico de vistas
-- Arquitectura modular
-- Consumo de APIs REST
-- Componentización
-- Separación de responsabilidades
-- Carga dinámica de archivos HTML
-- Buenas prácticas de documentación con JSDoc
+Una **Single Page Application** construida con JavaScript Vanilla que consume la [API pública de Rick and Morty](https://rickandmortyapi.com/), implementando routing del lado del cliente, arquitectura modular y componentes reutilizables — sin ningún framework.
 
 ---
 
-# Características
+## Demo rápido
 
-## Home
-
-- Consume la API pública de Rick and Morty
-- Obtiene personajes dinámicamente
-- Renderiza cards reutilizables
-
-## Contactos
-
-- Formulario desacoplado
-- Manejo de eventos JavaScript
-
-## Quiénes Somos
-
-- Página estática modular
-
-## Arquitectura SPA
-
-- Navegación sin recargar la página
-- Hash Routing
-- Carga dinámica de vistas
+```bash
+git clone https://github.com/tu-usuario/RickAndMorty_SPAChallenge.git
+cd RickAndMorty_SPAChallenge
+cp .env.example .env
+npm install
+npm run dev
+```
 
 ---
 
-# Tecnologías utilizadas
+## Requisitos previos
 
-- HTML5
-- CSS3
-- JavaScript ES6+
-- Axios API
-- ES Modules
+- Node.js `>= 18.0.0`
+- npm
 
 ---
 
-# Estructura del proyecto
+## Instalación
 
-```txt
-RickAndMorty_SPAChallenge-main/
+**1. Clonar el repositorio**
+```bash
+git clone https://github.com/tu-usuario/RickAndMorty_SPAChallenge.git
+cd RickAndMorty_SPAChallenge
+```
+
+**2. Crear el archivo de entorno**
+```bash
+# .env
+VITE_API_URL=https://rickandmortyapi.com/api
+VITE_CONTENT_TYPE=application/json
+VITE_TIME_OUT=5000
+```
+
+**3. Instalar dependencias**
+```bash
+npm install
+```
+
+**4. Ejecutar en desarrollo**
+```bash
+npm run dev
+```
+
+---
+
+## Scripts disponibles
+
+| Script | Descripción |
+|--------|-------------|
+| `npm run dev` | Servidor de desarrollo con hot reload |
+| `npm run build` | Build de producción |
+| `npm run preview` | Preview del build de producción |
+
+---
+
+## Rutas
+
+| Ruta | Descripción |
+|------|-------------|
+| `/` | Listado de personajes |
+| `/episode` | Listado de episodios |
+| `/location` | Listado de locaciones |
+| `/contacts` | Formulario de contacto |
+| `/about` | Quiénes somos |
+
+---
+
+## Arquitectura
+
+```
+RickAndMorty_SPAChallenge/
 │
-├── index.html
+├── index.html                  # Entry point HTML
 ├── package.json
-├── package-lock.json
-├── .gitignore
-├── README.md
+├── .env                        # Variables de entorno (no commitear)
 │
 └── assets/
     ├── css/
     │   └── styles.css
     │
     └── js/
-        ├── app.js
-        ├── router.js
+        ├── app.js              # Inicialización y navegación SPA
+        ├── router.js           # Router client-side
+        │
+        ├── services/
+        │   ├── api.js          # Llamadas a la API de Rick and Morty
+        │   └── httpClient.js   # Instancia Axios configurada
         │
         ├── components/
+        │   ├── navbar.js       # Barra de navegación
         │   ├── characterCard.js
         │   ├── episodeCard.js
-        │   ├── locationCard.js      
-        │   └── navbar.js
+        │   └── locationCard.js
         │
         ├── pages/
         │   ├── home.js
         │   ├── episode.js
-        │   ├── location.js          
+        │   ├── location.js
         │   ├── contacts.js
         │   └── about.js
         │
-        ├── services/
-        │   ├── api.js
-        │   └── httpClient.js
+        ├── views/              # Templates HTML parciales
+        │   ├── home.html
+        │   ├── episode.html
+        │   ├── location.html
+        │   ├── contacts.html
+        │   └── about.html
         │
-        ├── utils/
-        │   └── helpers.js
-        │
-        └── views/
-            ├── home.html
-            ├── episode.html
-            ├── location.html        ← nuevo vs versión anterior
-            ├── contacts.html
-            └── about.html
+        └── utils/
+            └── helpers.js      # loadHTML y utilidades generales
 ```
 
-# Ejecución del proyecto
+---
 
-## Crear un archivo .env
+## API consumida
 
-```bash
-VITE_API_URL=https://rickandmortyapi.com/api
-VITE_CONTENT_TYPE=application/json
-VITE_TIME_OUT=5000
-```
+Todos los datos provienen de la [Rick and Morty API](https://rickandmortyapi.com/) (REST, pública, sin autenticación).
 
-## Ejecutar el proyecto
+| Endpoint | Uso |
+|----------|-----|
+| `GET /character` | Personajes (Home) |
+| `GET /episode` | Episodios |
+| `GET /location` | Locaciones |
 
-Para ejecutar el proyecto, primero se debe instalar las dependencias y luego realizar el run del proyecto
-```bash
-npm install
-npm run dev
-```
+---
+
+## Tecnologías
+
+| Tecnología | Versión | Rol |
+|------------|---------|-----|
+| JavaScript ES6+ | — | Lenguaje principal |
+| Vite | ^6.3.5 | Bundler / dev server |
+| Axios | ^1.9.0 | HTTP client |
+| HTML5 / CSS3 | — | Estructura y estilos |
+
+---
+
+## Contribuir
+
+1. Hacer fork del repositorio
+2. Crear una rama: `git checkout -b feature/mi-feature`
+3. Commitear los cambios: `git commit -m 'feat: agrego mi feature'`
+4. Push a la rama: `git push origin feature/mi-feature`
+5. Abrir un Pull Request
+
+---
+
+## Autor
+
+**Devis M**
+
+---
+
+## Licencia
+
+Este proyecto es de uso privado.
