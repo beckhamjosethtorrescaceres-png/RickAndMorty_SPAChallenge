@@ -34,3 +34,19 @@ export async function getEpisode() {
         return [];
     }
 }
+
+/**
+ * Obtiene location.
+ *
+ * @returns {Promise<Array>}
+ */
+export async function getLocation() {
+    try {
+        const response = await httpClient.get('/location');
+        return response.data.results;
+
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
+}
