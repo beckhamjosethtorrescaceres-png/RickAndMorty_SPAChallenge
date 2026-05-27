@@ -9,9 +9,10 @@ export async function loadNavbar() {
     navbar.innerHTML = `
         <nav class="navbar">
             <a href="/" data-link>Home</a>
+            <a href="/episode" data-link> Episode</a>
             <a href="/contacts" data-link>Contactos</a>
             <a href="/about" data-link> Quiénes Somos</a>
-            <a href="#david"> Quiénes Somos</a>
+
         </nav>
     `;
 }
