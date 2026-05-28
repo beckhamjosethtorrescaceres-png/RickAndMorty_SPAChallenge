@@ -5,8 +5,8 @@
 import { renderHome } from './pages/home.js';
 import { renderContacts } from './pages/contacts.js';
 import { renderAbout } from './pages/about.js';
-import { renderEpisode } from './pages/episode.js';
-import { renderLocation } from './pages/location.js';
+import { renderEpisode } from './pages/render.js';
+import { renderLocation } from './pages/render.js';
 
 /**
  * Rutas disponibles
