@@ -16,12 +16,9 @@ export function openCharacterForm(form, modal, mode, character = null) {
         ? 'Guardar cambios'
         : 'Crear personaje';
 
-    form.querySelector('[data-field="gender"]').hidden = isEditing;
     form.querySelector('[data-field="image"]').hidden = isEditing;
-    form.elements.gender.disabled = isEditing;
-    form.elements.gender.required = !isEditing;
     form.elements.image.disabled = isEditing;
-    form.elements.image.required = !isEditing;
+    form.elements.image.required = false;
 
     if (isEditing) {
         form.elements.name.value = character.name;

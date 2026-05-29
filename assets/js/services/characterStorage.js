@@ -3,6 +3,7 @@ import { getLocalStorage, setLocalStorage } from '../utils/storage.js';
 const CUSTOM_KEY = 'customCharacters';
 const HIDDEN_KEY = 'hiddenCharacters';
 const EDITS_KEY = 'characterEdits';
+const FALLBACK_IMAGE = 'assets/css/img/image.png';
 
 /**
  * Une personajes de la API, ediciones locales y personajes creados.
@@ -46,9 +47,8 @@ export function createCharacterFromForm(form) {
         localId: `local-${id}`,
         name: form.elements.name.value,
         species: form.elements.species.value,
-        gender: form.elements.gender.value,
         status: form.elements.status.value,
-        image: form.elements.image.value
+        image: form.elements.image.value || FALLBACK_IMAGE
     };
 }
 

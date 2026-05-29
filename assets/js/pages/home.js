@@ -15,6 +15,7 @@ import {
     saveNewCharacter
 } from '../services/characterStorage.js';
 import { loadHTML } from '../utils/helpers.js';
+import { toast } from '../utils/toast.js';
 
 /**
  * Renderiza Home
@@ -36,7 +37,18 @@ export async function renderHome() {
         'restore-hidden-characters'
     );
 
-    const apiCharacters = await getCharacters();
+    let apiCharacters = [];
+
+    try {
+        apiCharacters = await getCharacters();
+
+        if (apiCharacters.length === 0) {
+            toast.warning('No se encontraron personajes en la API.');
+        }
+    } catch {
+        toast.error('Error al cargar personajes desde la API. Mostrando datos locales.');
+    }
+
     let characters = getAllCharacters(apiCharacters);
 
     /**
@@ -44,6 +56,15 @@ export async function renderHome() {
      */
     function renderCharacters() {
         const visibleCharacters = getVisibleCharacters(characters);
+
+        if (visibleCharacters.length === 0) {
+            container.innerHTML = `
+                <p style="color: #aaa; text-align: center; grid-column: 1/-1; padding: 2rem;">
+                    No hay personajes para mostrar. Puedes crear uno o restaurar los ocultos.
+                </p>
+            `;
+            return;
+        }
 
         container.innerHTML = visibleCharacters
             .map(character => characterCard(character))
@@ -83,11 +104,13 @@ export async function renderHome() {
             const newCharacter = createCharacterFromForm(form);
 
             saveNewCharacter(newCharacter);
+            toast.success(`¡Personaje "${newCharacter.name}" creado con éxito!`);
         } else {
             const characterId = form.dataset.characterId;
             const editedCharacter = getEditedCharacterFromForm(form);
 
             saveCharacterEdit(characterId, editedCharacter);
+            toast.success(`¡Personaje "${editedCharacter.name}" actualizado con éxito!`);
         }
 
         characters = getAllCharacters(apiCharacters);
@@ -96,7 +119,7 @@ export async function renderHome() {
     }
 
     /**
-     * Maneja los botones editar y ocultar de cada tarjeta.
+     * Maneja los botones editar y eliminar de cada tarjeta.
      */
     function handleCardButtonClick(event) {
         const button = event.target.closest('button[data-action]');
@@ -116,9 +139,10 @@ export async function renderHome() {
             return;
         }
 
-        if (confirm(`Ocultar a ${character.name}?`)) {
+        if (confirm(`¿Estás seguro de que deseas eliminar a ${character.name}?`)) {
             hideCharacter(characterId);
             card.remove();
+            toast.info(`Personaje "${character.name}" eliminado.`);
         }
     }
 
@@ -127,7 +151,9 @@ export async function renderHome() {
      */
     function handleRestoreButtonClick() {
         restoreHiddenCharacters();
+        characters = getAllCharacters(apiCharacters);
         renderCharacters();
+        toast.success('Todos los personajes restaurados.');
     }
 
     renderCharacters();
