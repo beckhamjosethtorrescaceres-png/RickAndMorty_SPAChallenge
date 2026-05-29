@@ -5,14 +5,21 @@
     <div id="mi-modal" class="overlay">
       <div class="modal-box">
         <h2>Título de la sub-página</h2>
-        <div class="inputs">
-          <input type="text" placeholder="Name">
-          <input type="text" placeholder="status">
-          <input type="text" placeholder="species">
-          <button id="btn-cerrar">Cerrar</button>
+        <div class="container-inputs">
+          <form id="form">
+            <input id="name" type="text" placeholder="Name" required>
+            <input id="status" type="text" placeholder="status" required>
+            <input id="species" type="text" placeholder="species" required>
+            <button id="añadir" class="añadir">add</button>
+          </form>
+          
+          <button class="btn-cerrar" id="btn-cerrar">cerrar</button>
+        </div>
         </div>
       </div>
     </div>
-
+    <div id="div-card" class="grid">
+      
+    </div>
     <div id="characters-container" class="grid"></div>
 </section>   
