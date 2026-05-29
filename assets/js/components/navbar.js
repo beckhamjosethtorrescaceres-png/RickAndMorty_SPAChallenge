@@ -4,12 +4,12 @@
 
 export async function loadNavbar() {
 
-    const navbar = document.getElementById('navbar');
+    const navbar = document.getElementById('header');
 
     navbar.innerHTML = `
-        <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+        <nav id="navbar">
             <!-- Links -->
-            <ul class="navbar-nav">
+            <ul class="list_navbar">
                 <li class="nav-item">
                     <a class="nav-link" href="/" data-link>Home</a>
                 </li>

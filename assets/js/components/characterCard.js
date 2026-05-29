@@ -21,8 +21,8 @@ export function characterCard(character) {
                     <strong>Species:</strong>
                     ${character.species}
                 </p>
-                <button type="button" class="btn btn-primary">Editar</button>
-                <button type="button" class="btn btn-danger">Ocultar</button>
+                <button type="button" class="editar">Editar</button>
+                <button type="button" class="ocultar">Ocultar</button>
             </div>
         </article>
     `;
