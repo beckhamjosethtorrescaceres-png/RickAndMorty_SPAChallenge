@@ -60,6 +60,41 @@ form {
     max-width: 400px;
 }
 
+.character-form-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, .75);
+}
+
+.character-form-modal[hidden] {
+    display: none;
+}
+
+.character-form {
+    width: min(100%, 400px);
+    padding: 1rem;
+    background: black;
+    border: 2px solid #04c7047c;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #4caf50;
+}
+
+.character-form h2 {
+    margin: 0;
+    text-align: center;
+}
+
+.character-form label {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+}
+
 input,
 textarea,
 button {

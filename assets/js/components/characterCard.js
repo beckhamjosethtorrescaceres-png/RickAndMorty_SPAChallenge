@@ -5,7 +5,7 @@
 export function characterCard(character) {
 
     return `
-        <article class="card">
+        <article class="card" data-character-id="${character.localId}">
             <img
                 src="${character.image}"
                 alt="${character.name}"
@@ -21,8 +21,8 @@ export function characterCard(character) {
                     <strong>Species:</strong>
                     ${character.species}
                 </p>
-                <button type="button" class="btn btn-primary">Editar</button>
-                <button type="button" class="btn btn-danger">Ocultar</button>
+                <button type="button" class="btn btn-primary" data-action="edit">Editar</button>
+                <button type="button" class="btn btn-danger" data-action="hide">Ocultar</button>
             </div>
         </article>
     `;
