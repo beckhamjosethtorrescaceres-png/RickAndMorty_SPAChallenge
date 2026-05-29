@@ -1,0 +1,16 @@
+.card-body h3{
+     color: rgb(0, 255, 0);
+     font-size: 2rem;
+
+}
+.card-body p{
+    font-size: 1rem;
+}
+.ocultar{
+    border-radius: 0.4rem;
+    background-color:  rgb(218, 44, 25);
+}
+.editar{
+    border-radius: 0.4rem;
+    background-color: rgb(7, 207, 7);
+}
