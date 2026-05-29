@@ -2,5 +2,42 @@
 
 <img src="/assets/img/titulo.png"  class="titulo">   
 
+    <button type="button" id="show-create-character-form" class="btn btn-primary">
+        Nuevo personaje
+    </button>
+
+    <div id="character-form-modal" class="character-form-modal" hidden>
+        <form id="create-character-form" class="character-form">
+            <h2 id="character-form-title">Crear personaje</h2>
+
+            <label>
+                Nombre
+                <input type="text" name="name" placeholder="Nombre" required>
+            </label>
+
+            <label>
+                Especie
+                <input type="text" name="species" placeholder="Especie" required>
+            </label>
+
+            <label>
+                Estado
+                <input type="text" name="status" placeholder="Estado" required>
+            </label>
+
+            <label data-field="image">
+                URL de imagen (opcional)
+                <input type="url" name="image" placeholder="https://...">
+            </label>
+
+            <button type="submit" class="btn btn-primary">Crear personaje</button>
+            <button type="button" id="cancel-character-form" class="btn btn-danger">Cancelar</button>
+        </form>
+    </div>
+
+    <button type="button" id="restore-hidden-characters" class="btn btn-primary">
+        Restaurar ocultos
+    </button>
+
     <div id="characters-container" class="grid"></div>
 </section>

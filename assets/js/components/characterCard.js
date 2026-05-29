@@ -2,13 +2,16 @@
  * Character Card Component
  */
 
+const FALLBACK_IMAGE = 'assets/css/img/image.png';
+
 export function characterCard(character) {
 
     return `
-        <article class="card">
+        <article class="card" data-character-id="${character.localId}">
             <img
-                src="${character.image}"
+                src="${character.image || FALLBACK_IMAGE}"
                 alt="${character.name}"
+                onerror="this.src='${FALLBACK_IMAGE}'; this.classList.add('img--broken');"
             >
 
             <div class="card-body">
@@ -21,8 +24,8 @@ export function characterCard(character) {
                     <strong>Species:</strong>
                     ${character.species}
                 </p>
-                <button type="button" class="editar">Editar</button>
-                <button type="button" class="ocultar">Ocultar</button>
+                <button type="button" class="btn btn-primary" data-action="edit">Editar</button>
+                <button type="button" class="btn btn-danger" data-action="hide">Eliminar</button>
             </div>
         </article>
     `;

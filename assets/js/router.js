@@ -7,6 +7,7 @@ import { renderContacts } from './pages/contacts.js';
 import { renderAbout } from './pages/about.js';
 import { renderEpisode } from './pages/render.js';
 import { renderLocation } from './pages/render.js';
+import { updateActiveLink } from './components/navbar.js';
 
 /**
  * Rutas disponibles
@@ -26,6 +27,10 @@ export async function router() {
 
     // Obtiene ruta real
     const path = window.location.pathname;
+
+    // Actualiza enlace activo en el navbar
+    updateActiveLink();
+
     // Busca render
     const render = routes[path];
     if (render) {
