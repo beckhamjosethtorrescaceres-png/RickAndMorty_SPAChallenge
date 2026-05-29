@@ -1,9 +1,12 @@
 @import url(style_modal.css);
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+
 }
 
 .navbar {
@@ -14,7 +17,7 @@ body {
 }
 
 .navbar a {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
@@ -28,11 +31,20 @@ main {
     gap: 1rem;
 }
 
+
 .card {
-    background: white;
+    background: rgb(0, 0, 0);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 3px 10px rgba(0,0,0,.1);
+    border: 2px solid #04c7047c;           
+    transition: all 0.3s ease;        
+}
+
+
+.card:hover {
+    border-color: #4caf50;           
+    box-shadow: 0px 3px 10px rgba(0,0,0,.1), 0 0 15px #4caf50; 
 }
 
 .card img {
@@ -54,4 +66,24 @@ input,
 textarea,
 button {
     padding: 1rem;
+}
+
+
+.titulo{
+      display: block;      
+  margin-left: auto;   
+  margin-right: auto
+}
+
+#video-fondo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
